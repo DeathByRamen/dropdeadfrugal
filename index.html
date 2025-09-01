@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDeadFrugal - Beauty Deals Bot</title>
+    <meta name="description" content="Automated beauty deals bot that finds and shares Amazon beauty discounts on Twitter">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .twitter-link {
+            display: inline-block;
+            background: #1da1f2;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .twitter-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(29, 161, 242, 0.3);
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .header, .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">✨💄🌟</div>
+            <h1 class="title">DropDeadFrugal</h1>
+            <p class="subtitle">Your AI-Powered Beauty Deals Bot</p>
+            <a href="https://twitter.com/DropDeadFrugal" class="twitter-link" target="_blank">
+                🐦 Follow @DropDeadFrugal
+            </a>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 What We Do</h2>
+            <p>DropDeadFrugal is an automated beauty deals bot that scours Amazon 24/7 to find the best beauty discounts and shares them instantly on Twitter. Never miss a deal on your favorite makeup, skincare, and beauty products again!</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Smart Detection</h3>
+                    <p>AI-powered system finds genuine beauty deals with 20%+ discounts</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Get notified instantly when great deals go live</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Quality Focused</h3>
+                    <p>Only high-rated products with excellent reviews</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Bot Performance</h2>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="deals-found">500+</span>
+                    <span>Deals Found</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="avg-discount">25%</span>
+                    <span>Avg Discount</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="followers">Growing</span>
+                    <span>Community</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span>Monitoring</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💄 Beauty Categories</h2>
+            <p>We track deals across all major beauty categories:</p>
+            <br>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <div>✨ <strong>Skincare:</strong> Serums, moisturizers, cleansers</div>
+                <div>💄 <strong>Makeup:</strong> Foundation, lipstick, eyeshadow</div>
+                <div>🌸 <strong>Fragrance:</strong> Perfumes, body sprays</div>
+                <div>💅 <strong>Nail Care:</strong> Polish, treatments, tools</div>
+                <div>🎀 <strong>Hair Care:</strong> Shampoo, styling products</div>
+                <div>🌟 <strong>Tools:</strong> Brushes, sponges, devices</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🤖 How It Works</h2>
+            <ol style="line-height: 2; padding-left: 20px;">
+                <li><strong>Continuous Monitoring:</strong> Our bot scans Amazon's beauty section every hour</li>
+                <li><strong>Quality Filtering:</strong> Only products with 4.0+ ratings and 50+ reviews qualify</li>
+                <li><strong>Discount Validation:</strong> Ensures genuine discounts of 20% or more</li>
+                <li><strong>Instant Posting:</strong> Deals are shared immediately with beautiful formatting</li>
+                <li><strong>Community Benefits:</strong> Followers get early access to limited-time offers</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>📱 Follow for Daily Deals</h2>
+            <p style="text-align: center; font-size: 1.1em;">
+                Join thousands of beauty lovers saving money every day!<br><br>
+                <a href="https://twitter.com/DropDeadFrugal" class="twitter-link" target="_blank">
+                    🐦 Follow @DropDeadFrugal on Twitter
+                </a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 DropDeadFrugal | Automated Beauty Deals Bot</p>
+        <p>
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="#terms">Terms of Service</a> | 
+            <a href="mailto:contact@dropdeadfrugal.com">Contact</a>
+        </p>
+    </div>
+    
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats on load
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                stat.style.opacity = '0';
+                stat.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    stat.style.transition = 'all 0.6s ease';
+                    stat.style.opacity = '1';
+                    stat.style.transform = 'translateY(0)';
+                }, Math.random() * 500);
+            });
+            
+            // Update follower count if we can get it
+            // This would be updated with real data from Twitter API
+            setTimeout(() => {
+                const followersElement = document.getElementById('followers');
+                if (followersElement && followersElement.textContent === 'Growing') {
+                    // In production, this would fetch real follower count
+                    followersElement.textContent = '0+';
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
