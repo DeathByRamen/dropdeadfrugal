@@ -1,6 +1,6 @@
 # DropDeadFrugal - Beauty Deals Bot Website
 
-🌟 **Live Site**: [https://yourusername.github.io/dropdeadfrugal-website](https://yourusername.github.io/dropdeadfrugal-website)
+🌟 **Live Site**: [https://deathbyramen.github.io/dropdeadfrugal-website](https://deathbyramen.github.io/dropdeadfrugal-website)
 
 🐦 **Twitter**: [@DropDeadFrugal](https://twitter.com/DropDeadFrugal)
 
